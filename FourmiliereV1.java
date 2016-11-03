@@ -29,8 +29,9 @@ public class FourmiliereV1
     }
  
 	private static int[][] initTerrain()
-	{
-		int[][] tab = new int[15][15];
+	{	// Remplissage de la partie centrale
+		int[][] tab = new tab[15][15];
+		// Remplissage de la partie gauche
 		int[][] bloc = new int[][] { {-1,-1,-1,-1,-1,-1,-1,-2 },
 		                             {-1, 0,-1, 0,-1, 0, 0, 0 },
 		                             {-1, 0, 0, 0, 0, 0, 0,-1 },
@@ -47,6 +48,7 @@ public class FourmiliereV1
 		                             {-1, 0, 0, 0, 0, 0, 0,-1 },
 		                             {-1,-1,-1,-3,-1,-1,-1,-1 }  };
 		                             
+		// Remplissage de la partie droite
 
 		                          
 		             
