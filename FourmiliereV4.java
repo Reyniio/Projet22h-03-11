@@ -43,17 +43,19 @@ public class FourmiliereV4
                 if(mouvement%2!=0)
                 {
                     if(mouvement<0) ligF--;
-                    else			ligF++;
+                    else	    ligF++;
                 }
                 else
                 {
                     if(mouvement<0) colF--;
-                    else			colF++;
+                    else	    colF++;
                 }
             }
 
         }while (! sortieTrouvee(terrain , colF, ligF) );
 
+	// Affichage du Terrain avec la fourmi sur une des sorties
+        System.out.println ( FourmiliereV4.tabEnChaine ( terrain, colF, ligF ) );
         System.out.println("Sortie trouvee en " + nbTentative + " coups !");
 
     }
