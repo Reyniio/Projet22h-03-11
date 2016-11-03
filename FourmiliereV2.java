@@ -29,7 +29,7 @@ public class FourmiliereV2
 			if (terrain[0][i] == ENTREE) colF = i;
 		}
 		// Affichage du Terrain
-		System.out.println ( FourmiliereV2.tabEnChaine ( terrain, colF, ligF ) );
+		System.out.println ( FourmiliereV2.enChaine ( terrain, colF, ligF ) );
 
 	}
 
@@ -76,7 +76,7 @@ public class FourmiliereV2
 		return tab;
 	}
 
-	private static String tabEnChaine(int[][] tab, int fourmiPosX, int fourmiPosY)
+	private static String enChaine(int[][] tab, int fourmiPosX, int fourmiPosY)
 	{
 		String sRet="";
 

@@ -32,7 +32,7 @@ public class FourmiliereV3
 	    	do 
 		{
 	    		// Affichage du Terrain
-	        	System.out.println ( FourmiliereV3.tabEnChaine ( terrain, colF, ligF ) );
+	        	System.out.println ( FourmiliereV3.enChaine ( terrain, colF, ligF ) );
 			
 		        // Deplacement de la fourmi par le joueur
 	            mouvement=deplaceFourmi(terrain, colF, ligF);
@@ -101,7 +101,7 @@ public class FourmiliereV3
             return tab;
         }
 
-        private static String tabEnChaine(int[][] tab, int fourmiPosX, int fourmiPosY)
+        private static String enChaine(int[][] tab, int fourmiPosX, int fourmiPosY)
         {
             String sRet="";
 

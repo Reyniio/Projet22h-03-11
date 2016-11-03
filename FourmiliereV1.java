@@ -24,7 +24,7 @@ public class FourmiliereV1
 		terrain = FourmiliereV1.initTerrain();
 
 		// Affichage du Terrain
-		System.out.println ( FourmiliereV1.tabEnChaine ( terrain ) );
+		System.out.println ( FourmiliereV1.enChaine ( terrain ) );
 
 	}
 
@@ -71,7 +71,7 @@ public class FourmiliereV1
 		return tab;
 	}
 
-	private static String tabEnChaine(int[][] tab)
+	private static String enChaine(int[][] tab)
 	{
 		String sRet="";
 
