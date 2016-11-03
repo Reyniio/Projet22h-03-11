@@ -7,7 +7,7 @@ public class FourmiliereV2
 	private static final int ENTREE   = -2;
 	private static final int SORTIE_1 = -3;
 	private static final int SORTIE_2 = -4;
-
+	private static final int DIM      = 15;
 
 	public static void main(String[] a)
 	{
@@ -30,7 +30,7 @@ public class FourmiliereV2
 
 	private static int[][] initTerrain()
 	{
-		int[][] tab = new int[15][15];
+		int[][] tab = new int[DIM][DIM];
 		int[][] bloc = new int[][] { {-1,-1,-1,-1,-1,-1,-1,-2 },
 		                             {-1, 0,-1, 0,-1, 0, 0, 0 },
 		                             {-1, 0, 0, 0, 0, 0, 0,-1 },
