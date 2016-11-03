@@ -176,13 +176,13 @@ public class FourmiliereV3
 			
 				
 				case 'E' : 
-					if(colF+2<DIM)
+					if(colF+1<DIM)
 						if(tab[ligF][colF+1]!=MUR) return +2;
 					break;
 				
 				
 				case 'O' : 
-					if(colF-2>=0)
+					if(colF-1>=0)
 						if(tab[ligF][colF-1]!=MUR) return -2;
 					break;
 					
