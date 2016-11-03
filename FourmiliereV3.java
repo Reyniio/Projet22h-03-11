@@ -40,24 +40,24 @@ public class FourmiliereV3
             
             if(mouvement!=0)
             {
-            	if(mouvement%2!=0)
+            	if(mouvement%2!=0)//impair = ligne
             	{
-            		if(mouvement<0)
+            		if(mouvement<0)//negatif = decrementation
             		{
                         ligF--;
                     }
-                    else
+                    else//positif = incrementation
                     {
                         ligF++;
                     }
             	}
-            	else
+            	else//pair = colonne
             	{
-            		if(mouvement<0)
+            		if(mouvement<0)//negatif = decrementation
             		{
                         colF--;
                     }
-                    else
+                    else//positif = incrementation
                     {
                         colF++;
                     }
