@@ -71,7 +71,7 @@ public class FourmiliereV2
 		return tab;
 	}
 
-	private static String tabEnChaine(int[][] tab, int fourmiPosX, int fourmiPosY)
+	private static String tabEnChaine(int[][] tab, int ligF, int colF)
 	{
 		String sRet="";
 
@@ -95,9 +95,6 @@ public class FourmiliereV2
 					case SORTIE_2 : sRet+= " "; break;
 				}
 			 }
-				while (tab[i][j]!=SORTIE_1 ||tab[i][j]!=SORTIE_2 ){
-
-				}
 		    }
 	    	sRet+= "\n";
 		}	
