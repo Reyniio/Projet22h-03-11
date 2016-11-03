@@ -126,9 +126,9 @@ public class FourmiliereV3
         }
 	
 
-	private static int[][] deplaceFourmi(terrain , colF, ligF, pos)
+	private static int[][] deplaceFourmi(int[][] terrain ,int  colF, int ligF, char pos)
 	{
-		int[][] new tab = terrain;
+		int[][] tab = terrain;
 		return tab;
 	}
 		
