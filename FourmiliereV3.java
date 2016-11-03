@@ -32,7 +32,7 @@ public class FourmiliereV3
         }
 
         while (ligF!=SORTIE_1 ||ligF!=SORTIE_2 ){
-            String str = sc.next();
+            String move = sc.next();
                     switch(pos) {
                         case 'N':
                             colF -= move;
