@@ -31,10 +31,10 @@ public class FourmiliereV3
 
 	    	do 
 		{
-	    		// Affichage du Terrain
-	        	System.out.println ( FourmiliereV3.enChaine ( terrain, colF, ligF ) );
+	    	    // Affichage du Terrain
+	      	    System.out.println ( FourmiliereV3.enChaine ( terrain, colF, ligF ) );
 			
-		        // Deplacement de la fourmi par le joueur
+		    // Deplacement de la fourmi par le joueur
 	            mouvement=deplaceFourmi(terrain, colF, ligF);
 	            
 	            if(mouvement!=0)
@@ -53,6 +53,8 @@ public class FourmiliereV3
 	
 	    }while (! sortieTrouvee(terrain , colF, ligF) );
 
+	    // Affichage du Terrain lorsque l'on a trouve la sortie
+            System.out.println ( FourmiliereV3.tabEnChaine ( terrain, colF, ligF ) );
 	    System.out.println("Sortie trouvee !");
 
 	}
@@ -80,7 +82,7 @@ public class FourmiliereV3
 
 		                          
 		             
-		 // recopie du tableau bloc dans la partie gauche du tableau tab
+	    // recopie du tableau bloc dans la partie gauche du tableau tab
             for (int i=0 ; i<DIM ; i++)
             {
                 for(int j=0 ; j<DIM/2+1 ; j++)
