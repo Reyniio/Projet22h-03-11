@@ -78,18 +78,23 @@ public class FourmiliereV2
 		for (int i=0 ; i<15 ; i++)
 		{
 		    for(int j=0 ; j<15 ; j++)
-		    {
-		    	switch(tab[i][j])
-		    	{
-		    		case 0 	      : sRet+= " "; break;
-		    		case MUR      : sRet+= "X"; break;
-		    		case ENTREE   : sRet+= " "; break;
-		    		case SORTIE_1 : sRet+= " "; break;
-		    		case SORTIE_2 : sRet+= " "; break;
-		    	}
-				while (tab[i][j]!=SORTIE_1 ||tab[i][j]!=SORTIE_2 ){
-
+		    {	
+			if(fourmiPosX==j && fourmiPosY==i)
+			{
+				// c'est l'emplacement de la fourmi, on la dessine
+				sRet+= "."; break;
+			}
+			 else
+			 {
+			    	switch(tab[i][j])
+				{
+					case 0 	      : sRet+= " "; break;
+					case MUR      : sRet+= "X"; break;
+					case ENTREE   : sRet+= " "; break;
+					case SORTIE_1 : sRet+= " "; break;
+					case SORTIE_2 : sRet+= " "; break;
 				}
+			 }
 		    }
 	    	sRet+= "\n";
 		}	
