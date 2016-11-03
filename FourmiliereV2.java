@@ -15,6 +15,7 @@ public class FourmiliereV2
 		/*    VARIABLES     */
 		/*------------------*/
 		int[][] terrain;
+		//La fourmi sera toujours sur la ligne 1
 		int ligF=0,colF=0;
 		/*------------------*/
 		/*  INSTRUCTIONS    */
