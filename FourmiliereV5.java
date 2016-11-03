@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class FourmiliereV4
+public class FourmiliereV5
 {
     /*----------------------------------------------------------------*/
     /* Constantes accessibles par toutes les methodes de cette classe */
@@ -22,7 +22,7 @@ public class FourmiliereV4
 	/*------------------*/
 
         // Initialisation du Terrain
-        terrain = FourmiliereV4.initTerrain();
+        terrain = FourmiliereV5.initTerrain();
 
         // Recherche de l'entree du parcours
         for(int i=0 ; i<DIM  ; i++) {
@@ -32,7 +32,7 @@ public class FourmiliereV4
         do
         {
             // Affichage du Terrain
-            System.out.println ( FourmiliereV4.tabEnChaine ( terrain, colF, ligF ) );
+            System.out.println ( FourmiliereV5.tabEnChaine ( terrain, colF, ligF ) );
 
             // Deplacement de la fourmi par le joueur
             mouvement=deplaceFourmi(terrain, colF, ligF);
