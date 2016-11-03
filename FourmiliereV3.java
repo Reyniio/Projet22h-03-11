@@ -16,7 +16,7 @@ public class FourmiliereV3
 		/*    VARIABLES     */
 		/*------------------*/
 		int[][] terrain;
-        int ligF=0,colF=0;
+        int ligF=0,colF=0,move;
         Scanner sc = new Scanner(System.in);
 		/*------------------*/
 		/*  INSTRUCTIONS    */
@@ -29,8 +29,9 @@ public class FourmiliereV3
         for(int i=0 ; i<LARGEUR ; i++) {
             if (terrain[0][i] == ENTREE) colF = i;
         }
+
 		// Affichage du Terrain
-		System.out.println ( FourmiliereV1.tabEnChaine ( terrain ) );
+		System.out.println ( FourmiliereV3.tabEnChaine ( terrain ) );
 
 	}
 
