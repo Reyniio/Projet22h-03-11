@@ -21,7 +21,7 @@ public class FourmiliereV2
 		/*------------------*/
 
 		// Initialisation du Terrain
-		terrain = FourmiliereV1.initTerrain();
+		terrain = FourmiliereV2.initTerrain();
 		
 		// Recherche de l'entree du parcours
 		for(int i=0 ; i<LARGEUR ; i++) {

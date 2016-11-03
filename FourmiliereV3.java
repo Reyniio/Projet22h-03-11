@@ -17,12 +17,13 @@ public class FourmiliereV3
 		/*------------------*/
 		int[][] terrain;
         int ligF=0,colF=0;
+        Scanner sc = new Scanner(System.in);
 		/*------------------*/
 		/*  INSTRUCTIONS    */
 		/*------------------*/
 
 		// Initialisation du Terrain
-		terrain = FourmiliereV1.initTerrain();
+		terrain = FourmiliereV3.initTerrain();
 
         // Recherche de l'entree du parcours
         for(int i=0 ; i<LARGEUR ; i++) {
