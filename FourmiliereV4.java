@@ -168,11 +168,11 @@ public class FourmiliereV4
                         if(tab[ligF+1][colF]!=MUR) return +1;
                     break;
                 case 2 :
-                    if(colF+2<DIM)
+                    if(colF+1<DIM)
                         if(tab[ligF][colF+1]!=MUR) return +2;
                     break;
                 case 3 :
-                    if(colF-2>=0)
+                    if(colF-1>=0)
                         if(tab[ligF][colF-1]!=MUR) return -2;
                     break;
                 ///Un default n'est pas utile ici
