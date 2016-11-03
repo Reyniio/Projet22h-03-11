@@ -87,6 +87,7 @@ public class FourmiliereV2
 		    		case ENTREE   : sRet+= " "; break;
 		    		case SORTIE_1 : sRet+= " "; break;
 		    		case SORTIE_2 : sRet+= " "; break;
+				case FOURMI   : sRet+= "."; break;
 		    	}
 		    }
 	    	sRet+= "\n";
