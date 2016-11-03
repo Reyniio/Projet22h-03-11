@@ -79,7 +79,7 @@ public class FourmiliereV2
 		{
 		    for(int j=0 ; j<15 ; j++)
 		    {	
-			if(fourmiPosX==j && fourmiPosY==y)
+			if(fourmiPosX==j && fourmiPosY==i)
 			{
 				// c'est l'emplacement de la fourmi, on la dessine
 				sRet+= "."; break;
