@@ -32,7 +32,7 @@ public class FourmiliereV5
         do
         {
             // Affichage du Terrain
-            System.out.println ( FourmiliereV5.tabEnChaine ( terrain, colF, ligF ) );
+            System.out.println ( FourmiliereV5.enChaine ( terrain, colF, ligF ) );
 
             // Deplacement de la fourmi par le joueur
             mouvement=deplaceFourmi(terrain, colF, ligF);
@@ -55,6 +55,7 @@ public class FourmiliereV5
         }while (! sortieTrouvee(terrain , colF, ligF) );
 
         // Affichage du Terrain avec la fourmi sur une des sorties
+
         System.out.println ( FourmiliereV5.tabEnChaine ( terrain, colF, ligF ) );
         System.out.println("Sortie trouvee en " + nbTentative + " coups !");
 
@@ -104,7 +105,7 @@ public class FourmiliereV5
         return tab;
     }
 
-    private static String tabEnChaine(int[][] tab, int fourmiPosX, int fourmiPosY)
+    private static String enChaine(int[][] tab, int fourmiPosX, int fourmiPosY)
     {
         String sRet="";
 
@@ -152,8 +153,6 @@ public class FourmiliereV5
 
         do
         {
-
-
 
             //Nombre impair pour les abscisses et pair pour les ordonnees
             //Nombre positif pour une incrementation et negatif pour une decrementation
