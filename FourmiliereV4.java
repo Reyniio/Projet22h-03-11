@@ -2,8 +2,8 @@ import java.util.Scanner;
 public class FourmiliereV4
 {
     /*----------------------------------------------------------------*/
-	/* Constantes accessibles par toutes les methodes de cette classe */
-	/*----------------------------------------------------------------*/
+    /* Constantes accessibles par toutes les methodes de cette classe */
+    /*----------------------------------------------------------------*/
     private static final int MUR      = -1;
     private static final int ENTREE   = -2;
     private static final int SORTIE_1 = -3;
@@ -12,14 +12,14 @@ public class FourmiliereV4
 
     public static void main(String[] a)
     {
-		/*------------------*/
-		/*    VARIABLES     */
-		/*------------------*/
+	/*------------------*/
+	/*    VARIABLES     */
+	/*------------------*/
         int[][] terrain;
         int ligF=0,colF=0,mouvement,nbTentative=0;
-		/*------------------*/
-		/*  INSTRUCTIONS    */
-		/*------------------*/
+	/*------------------*/
+	/*  INSTRUCTIONS    */
+	/*------------------*/
 
         // Initialisation du Terrain
         terrain = FourmiliereV4.initTerrain();
