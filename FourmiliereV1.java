@@ -15,7 +15,7 @@ public class FourmiliereV1
 		/*    VARIABLES     */
 		/*------------------*/
 		int[][] terrain;
-		int ligF,colF;
+
 		/*------------------*/
 		/*  INSTRUCTIONS    */
 		/*------------------*/

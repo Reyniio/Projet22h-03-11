@@ -15,7 +15,7 @@ public class FourmiliereV2
 		/*    VARIABLES     */
 		/*------------------*/
 		int[][] terrain;
-
+		int ligF,colF;
 		/*------------------*/
 		/*  INSTRUCTIONS    */
 		/*------------------*/
@@ -86,8 +86,10 @@ public class FourmiliereV2
 		    		case ENTREE   : sRet+= " "; break;
 		    		case SORTIE_1 : sRet+= " "; break;
 		    		case SORTIE_2 : sRet+= " "; break;
-				case FOURMI   : sRet+= "."; break;
 		    	}
+				while (tab[i][j]!=SORTIE_1 ||tab[i][j]!=SORTIE_2 ){
+
+				}
 		    }
 	    	sRet+= "\n";
 		}	
