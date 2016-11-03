@@ -46,7 +46,7 @@ public class FourmiliereV4 {
 
         // Affichage du Terrain avec la fourmi sur une des sorties
         System.out.println(FourmiliereV4.enChaine(terrain, colF, ligF));
-        System.out.println("Sortie trouvee en " + nbTentative + " coups !");
+        System.out.println("Sortie trouvee en " + nbTentative + " coups!");
 
     }
 
