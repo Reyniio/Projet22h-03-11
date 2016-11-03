@@ -23,9 +23,9 @@ public class FourmiliereV3 {
         terrain = FourmiliereV3.initTerrain();
 
         // Recherche de l'entree du parcours
-        for (int i = 0; i < DIM; i++) {
+        for (int i = 0; i < DIM; i++) 
             if (terrain[0][i] == ENTREE) colF = i;
-        }
+        
 
         do {
             // Affichage du Terrain
