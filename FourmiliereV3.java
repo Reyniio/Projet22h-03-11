@@ -31,7 +31,7 @@ public class FourmiliereV3
             if (terrain[0][i] == ENTREE) colF = i;
         }
 
-        while (tab[i][j]!=SORTIE_1 ||tab[i][j]!=SORTIE_2 ){
+        while (ligF!=SORTIE_1 ||ligF!=SORTIE_2 ){
             String str = sc.next();
                     switch(pos) {
                         case 'N':
