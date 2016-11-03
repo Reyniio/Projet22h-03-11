@@ -29,8 +29,9 @@ public class FourmiliereV1
 	}
 
 	private static int[][] initTerrain()
-	{
+	{	// Ligne centrale
 		int[][] tab = new int[15][15];
+		// Partie Gauche
 		int[][] bloc = new int[][] { {-1,-1,-1,-1,-1,-1,-1,-2 },
 		                             {-1, 0,-1, 0,-1, 0, 0, 0 },
 		                             {-1, 0, 0, 0, 0, 0, 0,-1 },
