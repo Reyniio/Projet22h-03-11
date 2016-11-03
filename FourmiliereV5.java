@@ -55,7 +55,6 @@ public class FourmiliereV5
         }while (! sortieTrouvee(terrain , colF, ligF) );
 
         // Affichage du Terrain avec la fourmi sur une des sorties
-
         System.out.println ( FourmiliereV5.tabEnChaine ( terrain, colF, ligF ) );
         System.out.println("Sortie trouvee en " + nbTentative + " coups !");
 
