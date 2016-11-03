@@ -73,7 +73,7 @@ public class FourmiliereV1
 		return tab;
 	}
 
-	private static String tabEnChaine(int[][] tab)
+	private static String tabEnChaine(int[][] tab, int posXFourmi, int posYFourmi)
 	{
 		String sRet="";
 
