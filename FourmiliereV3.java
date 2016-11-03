@@ -125,7 +125,7 @@ public class FourmiliereV3
 
         }
 	
-	private static void sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY)
+	private static boolean sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY)
         {
            return (tab[fourmiPosY][fourmiPosX]==SORTIE_1 || tab[fourmiPosY][fourmiPosX]==SORTIE_2);
 
