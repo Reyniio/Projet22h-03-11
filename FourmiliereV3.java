@@ -48,31 +48,7 @@ public class FourmiliereV3
                             break;
 
                         }
-                    }else{
-                    char tmp = str.charAt(0);
-                    if (tmp == 'D'){
-                        switch (pos){
-                            case 'N' : pos = 'E';
-                                break;
-                            case 'E' : pos = 'S';
-                                break;
-                            case 'S' : pos = 'W';
-                                break;
-                            case 'W' : pos = 'N';
-                                break;
 
-                        }
-                    }else if (tmp == 'G') {
-                        switch (pos){
-                            case 'N' : pos = 'W';
-                                break;
-                            case 'W' : pos = 'S';
-                                break;
-                            case 'S' : pos = 'E';
-                               break;
-                            case 'E' : pos = 'N';
-                                break;
-                    }
 
                 }
         }
