@@ -1,33 +1,33 @@
 public class FourmiliereV1
 {
-    /*----------------------------------------------------------------*/
-    /* Constantes accessibles par toutes les méthodes de cette classe */
-    /*----------------------------------------------------------------*/
-    private static final int MUR      = -1;
-    private static final int ENTREE   = -2;
-    private static final int SORTIE_1 = -3;
-    private static final int SORTIE_2 = -4;
- 
- 
-    public static void main(String[] a)
-    {
-        /*------------------*/
-        /* VARIABLES */
-        /*------------------*/
-        int[][] terrain;
- 
-        /*------------------*/
-        /*  INSTRUCTIONS    */
-        /*------------------*/
- 
-        // Initialisation du Terrain
-        terrain = FourmiliereV1.initTerrain();
- 
-        // Affichage du Terrain
-        System.out.println ( FourmiliereV1.tabEnChaine ( terrain ) );
- 
-    }
- 
+	/*----------------------------------------------------------------*/
+	/* Constantes accessibles par toutes les méthodes de cette classe */
+	/*----------------------------------------------------------------*/
+	private static final int MUR      = -1;
+	private static final int ENTREE   = -2;
+	private static final int SORTIE_1 = -3;
+	private static final int SORTIE_2 = -4;
+
+
+	public static void main(String[] a)
+	{
+		/*------------------*/
+		/*    VARIABLES     */
+		/*------------------*/
+		int[][] terrain;
+
+		/*------------------*/
+		/*  INSTRUCTIONS    */
+		/*------------------*/
+
+		// Initialisation du Terrain
+		terrain = FourmiliereV1.initTerrain();
+
+		// Affichage du Terrain
+		System.out.println ( FourmiliereV1.tabEnChaine ( terrain ) );
+
+	}
+
 	private static int[][] initTerrain()
 	{
 		int[][] tab = new int[15][15];
@@ -51,16 +51,16 @@ public class FourmiliereV1
 		                          
 		             
 		 // recopie du tableau bloc dans la partie gauche du tableau tab
-		for (int i=0 ; i<16 ; i++)
+		for (int i=0 ; i<15 ; i++)
 		{
 		    for(int j=0 ; j<8 ; j++)
 		    {
 		    	tab[i][j]=bloc[i][j];
 		    }
-		}		                              
+		}		                             
 		                             
-		// construction de la partie droite du tableau tab selon la symetrie verticale
-		for (int i=0 ; i<16 ; i++)
+		// construction de la partie droite du terrain selon la symetrie verticale
+		for (int i=0 ; i<15 ; i++)
 		{
 			for(int j=7 ; j>=0 ; j--)
 			{
@@ -70,17 +70,31 @@ public class FourmiliereV1
 
 		return tab;
 	}
- 
-    private static String tabEnChaine(int[][] tab, int posXFourmi, int posYFourmi)
-    {
-        String sRet="";
- 
-        // Construction d'une chaine sRet symbolisant le terrain
- 
-        // A compléter
- 
- 
-        return sRet;
- 
-    }
+
+	private static String tabEnChaine(int[][] tab)
+	{
+		String sRet="";
+		int element;
+
+		for (int i=0 ; i<15 ; i++)
+		{
+		    for(int j=0 ; j<15 ; j++)
+		    {
+		    	element = tab[i][j];
+		    	switch(element)
+		    	{
+		    		case 0 		 : sRet+= " "; break;
+		    		case MUR 	 : sRet+= "X"; break;
+		    		case ENTREE  : sRet+= " "; break;
+		    		case SORTIE_1 : sRet+= " "; break;
+		    		case SORTIE_2 : sRet+= " "; break;
+		    	}
+		    }
+	    	sRet+= "\n";
+		}	
+
+
+		return sRet;
+
+	}
 }
