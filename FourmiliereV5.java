@@ -28,7 +28,7 @@ public class FourmiliereV5
         // Initialisation du Terrain
         terrain = FourmiliereV5.initTerrain();
 
-        // Recherche de l'entree du parcours
+        // Recherche de la colonne de l'entree du parcours, l'entree sera toujours sur la ligne 0
         for(int i=0 ; i<DIM  ; i++) 
             if (terrain[0][i] == ENTREE) colF = i;
         
