@@ -167,6 +167,10 @@ public class FourmiliereV3
 			System.out.println("Direction ? N S E O . . . ");
 			chaine = scan.nextLine();
 			car    = chaine.charAt(0);
+			
+			//Nombre impair pour les abscisses et pair pour les ordonnees
+			//Nombre positif pour une incrementation et negatif pour une decrementation
+			
 			switch(car)
 			{
 				case 'N' : return -1;
