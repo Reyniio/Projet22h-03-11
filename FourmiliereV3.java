@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class FourmiliereV3
 {
 	/*----------------------------------------------------------------*/
-	/* Constantes accessibles par toutes les méthodes de cette classe */
+	/* Constantes accessibles par toutes les methodes de cette classe */
 	/*----------------------------------------------------------------*/
 	private static final int MUR      = -1;
 	private static final int ENTREE   = -2;
