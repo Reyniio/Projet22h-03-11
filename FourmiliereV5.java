@@ -19,8 +19,8 @@ public class FourmiliereV5
 	/*------------------*/
 	/*    VARIABLES     */
 	/*------------------*/
-    int[][] terrain;
-    int ligF=0,colF=0,mouvement,nbTentative=0;
+    	int[][] terrain;
+    	int ligF=0,colF=0,mouvement,nbTentative=0;
 	/*------------------*/
 	/*  INSTRUCTIONS    */
 	/*------------------*/
@@ -29,9 +29,9 @@ public class FourmiliereV5
         terrain = FourmiliereV5.initTerrain();
 
         // Recherche de l'entree du parcours
-        for(int i=0 ; i<DIM  ; i++) {
+        for(int i=0 ; i<DIM  ; i++) 
             if (terrain[0][i] == ENTREE) colF = i;
-        }
+        
 
         do
         {
@@ -166,95 +166,95 @@ public class FourmiliereV5
 
     private static int aMainDroite(int[][] tab, int  colF, int ligF)
     {
- 	
  		switch(orientation)
  		{
- 		
- 			/////////////////////////////////////////////////////////////////
-	 		case 'N' : //////////////////////////////////////////////////////
-			/////////////////////////////////////////////////////////////////		
-	 	    if(colF+1<DIM)
-	 	    	if(tab[ligF][colF+1]!=MUR) 
-	        	   return +2;
-	 	   
-			else if(ligF-1>=0)
-				if(tab[ligF-1][colF]!=MUR) 
-						return -1;
-		 		
-			else if(colF-1>=0)
-				if(tab[ligF][colF-1]!=MUR) 
-						return -2;
-	 	   
-			else if(ligF+1<DIM)
-				if(tab[ligF+1][colF]!=MUR)
-						return +1;  
-		 	break;
-		 	/////////////////////////////////////////////////////////////////
-		 	
- 			/////////////////////////////////////////////////////////////////
-	 		case 'S' : //////////////////////////////////////////////////////
-			///////////////////////////////////////////////////////////////// 
-		    if(colF-1>=0)
-		    	if(tab[ligF][colF-1]!=MUR) 
-					return -2;
-			    
-		    else if(ligF+1<DIM)
-		    	if(tab[ligF+1][colF]!=MUR) 
-		    		return +1;
-			 
-		    else if(colF+1<DIM)
-		    	if(tab[ligF][colF+1]!=MUR) 
-					return +2;
+			    /////////////////////////////////////////////////////////////////
+			    case 'N' : //////////////////////////////////////////////////////
+			    /////////////////////////////////////////////////////////////////		
+			    if(colF+1<DIM)
+				if(tab[ligF][colF+1]!=MUR) 
+				   return +2;
 
-		    else if(ligF-1>=0)
-		    	if(tab[ligF-1][colF]!=MUR) 
-            		return -1;
-		    break;
-		    /////////////////////////////////////////////////////////////////
-		    
- 			/////////////////////////////////////////////////////////////////
-	 		case 'E' : //////////////////////////////////////////////////////
-			///////////////////////////////////////////////////////////////// 
-	        if(ligF+1<DIM)
-	        	if(tab[ligF+1][colF]!=MUR) 
-	        		return +1;
-	         
-	        else  if(colF+1<DIM)
-	        	if(tab[ligF][colF+1]!=MUR) 
-	        		return +2;
-	        
-			else if(ligF-1>=0)
-				if(tab[ligF-1][colF]!=MUR) 
+			    else if(ligF-1>=0)
+				    if(tab[ligF-1][colF]!=MUR) 
 					return -1;
-		        
-		    else if(colF-1>=0)
-		    	if(tab[ligF][colF-1]!=MUR) 
-					return -2;
-		 	break;
-		 	/////////////////////////////////////////////////////////////////	
-		 	
- 			/////////////////////////////////////////////////////////////////
-	 		case 'O' : //////////////////////////////////////////////////////
-			///////////////////////////////////////////////////////////////// 	
-			if(ligF-1>=0)
-				if(tab[ligF-1][colF]!=MUR) 
-					return -1;
-				  
-			else if(colF-1>=0)
+
+			    else if(colF-1>=0)
+				if(tab[ligF][colF-1]!=MUR) 
+				    return -2;
+
+			    else if(ligF+1<DIM)
+				if(tab[ligF+1][colF]!=MUR)
+				    return +1;  
+			     break;
+			     /////////////////////////////////////////////////////////////////
+
+			    /////////////////////////////////////////////////////////////////
+			    case 'S' : //////////////////////////////////////////////////////
+			    ///////////////////////////////////////////////////////////////// 
+			    if(colF-1>=0)
 				if(tab[ligF][colF-1]!=MUR) 
 					return -2;
-				  
-			else if(ligF+1<DIM)
+
+			    else if(ligF+1<DIM)
 				if(tab[ligF+1][colF]!=MUR) 
 					return +1;
-	 
-		     else if(colF+1<DIM)
-		    	 if(tab[ligF][colF+1]!=MUR) 
-				 	return +2;
-		 	 break;
-		 	 /////////////////////////////////////////////////////////////////
+
+			    else if(colF+1<DIM)
+				if(tab[ligF][colF+1]!=MUR) 
+					return +2;
+
+			    else if(ligF-1>=0)
+				if(tab[ligF-1][colF]!=MUR) 
+					return -1;
+			    break;
+			    /////////////////////////////////////////////////////////////////
+
+			    /////////////////////////////////////////////////////////////////
+			    case 'E' : //////////////////////////////////////////////////////
+			    ///////////////////////////////////////////////////////////////// 
+			    if(ligF+1<DIM)
+				if(tab[ligF+1][colF]!=MUR) 
+					return +1;
+
+			    else  if(colF+1<DIM)
+				if(tab[ligF][colF+1]!=MUR) 
+					return +2;
+
+			    else if(ligF-1>=0)
+				if(tab[ligF-1][colF]!=MUR) 
+					return -1;
+
+			    else if(colF-1>=0)
+				if(tab[ligF][colF-1]!=MUR) 
+					return -2;
+			    break;
+			    /////////////////////////////////////////////////////////////////	
+
+			    /////////////////////////////////////////////////////////////////
+			    case 'O' : //////////////////////////////////////////////////////
+			    ///////////////////////////////////////////////////////////////// 	
+			    if(ligF-1>=0)
+				   if(tab[ligF-1][colF]!=MUR) 
+					   return -1;
+
+			    else if(colF-1>=0)
+				if(tab[ligF][colF-1]!=MUR) 
+					return -2;
+
+			    else if(ligF+1<DIM)
+				if(tab[ligF+1][colF]!=MUR) 
+					return +1;
+
+			    else if(colF+1<DIM)
+				 if(tab[ligF][colF+1]!=MUR) 
+					 return +2;
+			   break;
+			   /////////////////////////////////////////////////////////////////
  		}
- 
+	    		
+	    
+	/// Le programme ne retournera jamais 0 car au moins une des 4 directions est valide
         return 0;
     }
 }
