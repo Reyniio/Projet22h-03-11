@@ -30,7 +30,7 @@ public class FourmiliereV1
  
 	private static int[][] initTerrain()
 	{
-		int[][] tab = new tab[15][15];
+		int[][] tab = new int[15][15];
 		int[][] bloc = new int[][] { {-1,-1,-1,-1,-1,-1,-1,-2 },
 		                             {-1, 0,-1, 0,-1, 0, 0, 0 },
 		                             {-1, 0, 0, 0, 0, 0, 0,-1 },
