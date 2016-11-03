@@ -86,7 +86,7 @@ public class FourmiliereV2
 			if(fourmiPosX==j && fourmiPosY==i)
 			{
 				// c'est l'emplacement de la fourmi, on la dessine
-				sRet+= "."; break;
+				sRet+= "."; 
 			}
 			 else
 			 {
