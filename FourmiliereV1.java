@@ -7,7 +7,7 @@ public class FourmiliereV1
 	private static final int ENTREE   = -2;
 	private static final int SORTIE_1 = -3;
 	private static final int SORTIE_2 = -4;
-    private static final int DIM      = 15;
+    	private static final int DIM      = 15;
 
 	public static void main(String[] a)
 	{
@@ -51,20 +51,20 @@ public class FourmiliereV1
 		                          
 		             
 		 // recopie du tableau bloc dans la partie gauche du tableau tab
-		for (int i=0 ; i<15 ; i++)
+		for (int i=0 ; i<DIM ; i++)
 		{
-		    for(int j=0 ; j<8 ; j++)
+		    for(int j=0 ; j<DIM/2+1 ; j++)
 		    {
 		    	tab[i][j]=bloc[i][j];
 		    }
 		}		                             
 		                             
 		// construction de la partie droite du terrain selon la symetrie verticale
-		for (int i=0 ; i<15 ; i++)
+		for (int i=0 ; i<DIM ; i++)
 		{
-			for(int j=7 ; j>=0 ; j--)
+			for(int j=DIM/2 ; j>=0 ; j--)
 			{
-				tab[i][7+7-j]=bloc[i][j];
+				tab[i][DIM-1-j]=bloc[i][j];
 			}
 		}
 
@@ -75,9 +75,9 @@ public class FourmiliereV1
 	{
 		String sRet="";
 
-		for (int i=0 ; i<15 ; i++)
+		for (int i=0 ; i<DIM ; i++)
 		{
-		    for(int j=0 ; j<15 ; j++)
+		    for(int j=0 ; j<DIM ; j++)
 		    {
 		    	switch(tab[i][j])
 		    	{
