@@ -34,13 +34,12 @@ public class FourmiliereV3 {
             // Deplacement de la fourmi par le joueur
             mouvement = deplaceFourmi(terrain, colF, ligF);
 
-            if (mouvement % 2 != 0) {
-                if (mouvement < 0) ligF--;
-                else ligF++;
-            } else {
-                if (mouvement < 0) colF--;
-                else colF++;
-            }
+	// Negatif : decrementation
+	// Positif : incrementation
+	if(mouvement%2!=0)// Nombre impair : ordonnee
+		ligF = (mouvement < 0) ? ligF-1 : ligF+1;
+	 else// Nombre pair : abscisse
+		colF = (mouvement < 0) ? colF-1 : colF+1;
 
         } while (!sortieTrouvee(terrain, colF, ligF));
 
@@ -77,12 +76,10 @@ public class FourmiliereV3 {
         }
 
         // construction de la partie droite du terrain selon la symetrie verticale
-        for (int i = 0; i < DIM; i++) {
-            for (int j = DIM / 2; j >= 0; j--) {
+        for (int i = 0; i < DIM; i++) 
+            for (int j = DIM / 2; j >= 0; j--) 
                 tab[i][DIM - 1 - j] = bloc[i][j];
-            }
-        }
-
+            
         return tab;
     }
 
@@ -178,5 +175,4 @@ public class FourmiliereV3 {
         } while (true);
 
     }
-
 }
