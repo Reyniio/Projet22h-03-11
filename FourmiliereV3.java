@@ -15,10 +15,9 @@ public class FourmiliereV3
 		/*------------------*/
 		/*    VARIABLES     */
 		/*------------------*/
-		int[][] terrain;
+	int[][] terrain;
         int ligF=0,colF=0;
         char pos ='N';
-        Scanner sc = new Scanner(System.in);
 		/*------------------*/
 		/*  INSTRUCTIONS    */
 		/*------------------*/
@@ -33,25 +32,9 @@ public class FourmiliereV3
 
         while (! sortieTrouvee(terrain , colF, ligF) )
 	{
-            char move = sc.next().charAt(0);
-
-                    switch(move) {
-                        case 'N':
-                            colF -= colF;
-                            break;
-                        case 'E':
-                            ligF += ligF;
-                            break;
-                        case 'W':
-                            ligF -= ligF;
-                            break;
-                        case 'S':
-                            colF += colF;
-                            break;
-
-                        }
-
-
+		
+	    // Deplacement de la fourmi par le joueur
+            deplaceFourmi(terrain , colF, ligF, pos);
             // Affichage du Terrain
             System.out.println ( FourmiliereV3.tabEnChaine ( terrain, colF, ligF ) );
         }
@@ -141,4 +124,17 @@ public class FourmiliereV3
            return (tab[fourmiPosY][fourmiPosX]==SORTIE_1 || tab[fourmiPosY][fourmiPosX]==SORTIE_2);
 
         }
+	
+	private static void sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY)
+        {
+           return (tab[fourmiPosY][fourmiPosX]==SORTIE_1 || tab[fourmiPosY][fourmiPosX]==SORTIE_2);
+
+        }
+	
+	private static int[][] deplaceFourmi(terrain , colF, ligF, pos)
+	{
+		int[][] new tab = terrain;
+		return tab;
+	}
+		
 }
