@@ -55,7 +55,9 @@ public class FourmiliereV5
             // Positif impair : orientation sud
             // Negatif pair   : orientation ouest
             // Positif pair   : orientation est
-            orientation = (mouvement%2!=0 ? (mouvement < 0 ? 'N' : 'S') : (mouvement < 0 ? 'O' : 'E'));
+            orientation = mouvement %2 != 0 
+            		? mouvement < 0 ? 'N' : 'S' 
+            		: mouvement < 0 ? 'O' : 'E';
             
 
         }while (! sortieTrouvee(terrain , colF, ligF) );
