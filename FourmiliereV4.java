@@ -35,21 +35,18 @@ public class FourmiliereV4
 
             // Deplacement de la fourmi par le joueur
             mouvement=deplaceFourmi(terrain, colF, ligF);
-	    nbTentative++;
+	        nbTentative++;
 
-            if(mouvement!=0)
+            if(mouvement%2!=0)
             {
-                if(mouvement%2!=0)
-                {
-                    if(mouvement<0) ligF--;
-                    else	    ligF++;
-                }
-                else
-                {
-                    if(mouvement<0) colF--;
-                    else	    colF++;
-                }
+                if(mouvement<0) ligF--;
+                else	        ligF++;
             }
+            else
+            {
+                if(mouvement<0) colF--;
+                else	        colF++;
+            }   
 
         }while (! sortieTrouvee(terrain , colF, ligF) );
 
