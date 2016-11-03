@@ -74,14 +74,12 @@ public class FourmiliereV1
 	private static String tabEnChaine(int[][] tab)
 	{
 		String sRet="";
-		int element;
 
 		for (int i=0 ; i<15 ; i++)
 		{
 		    for(int j=0 ; j<15 ; j++)
 		    {
-		    	element = tab[i][j];
-		    	switch(element)
+		    	switch(tab[i][j])
 		    	{
 		    		case 0 	      : sRet+= " "; break;
 		    		case MUR      : sRet+= "X"; break;
