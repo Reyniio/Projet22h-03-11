@@ -64,7 +64,7 @@ public class FourmiliereV2
 		}		                             
 		                             
 		// construction de la partie droite du terrain selon la symetrie verticale
-		for (int i=0 ; i<DIM/2 ; i++)
+		for (int i=0 ; i<DIM ; i++)
 		{
 			for(int j=DIM/2 ; j>=0 ; j--)
 			{
