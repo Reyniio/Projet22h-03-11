@@ -35,7 +35,7 @@ public class FourmiliereV5
             System.out.println ( FourmiliereV5.enChaine ( terrain, colF, ligF ) );
 
             // Deplacement de la fourmi par le joueur
-            mouvement=deplaceFourmi(terrain, colF, ligF);
+            mouvement=aMainDroite(terrain, colF, ligF);
             nbTentative++;
 
             if(mouvement!=0)
@@ -55,7 +55,7 @@ public class FourmiliereV5
         }while (! sortieTrouvee(terrain , colF, ligF) );
 
         // Affichage du Terrain avec la fourmi sur une des sorties
-        System.out.println ( FourmiliereV5.tabEnChaine ( terrain, colF, ligF ) );
+        System.out.println ( FourmiliereV5.enChaine ( terrain, colF, ligF ) );
         System.out.println("Sortie trouvee en " + nbTentative + " coups !");
 
     }
@@ -145,43 +145,16 @@ public class FourmiliereV5
     }
 
 
-    private static int deplaceFourmi(int[][] tab, int  colF, int ligF)
+    private static int aMainDroite(int[][] tab, int  colF, int ligF)
     {
-
-        int nb;
 
         do
         {
-
-            //Nombre impair pour les abscisses et pair pour les ordonnees
-            //Nombre positif pour une incrementation et negatif pour une decrementation
-
-            switch(nb)
-            {
-                case 0 :
-                    if(ligF-1>=0)
-                        if(tab[ligF-1][colF]!=MUR) return -1;
-                    break;
-                case 1 :
-                    if(ligF+1<DIM)
-                        if(tab[ligF+1][colF]!=MUR) return +1;
-                    break;
-                case 2 :
-                    if(colF+2<DIM)
-                        if(tab[ligF][colF+1]!=MUR) return +2;
-                    break;
-                case 3 :
-                    if(colF-2>=0)
-                        if(tab[ligF][colF-1]!=MUR) return -2;
-                    break;
-                ///Un default n'est pas utile ici
-            }
+        	
 
         }while(true);
 
-
     }
-
 
 
 }
