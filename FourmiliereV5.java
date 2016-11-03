@@ -43,22 +43,19 @@ public class FourmiliereV5
             nbTentative++;
 
 
-            // Negatif : decrementation
+	    // Negatif : decrementation
             // Positif : incrementation
             if(mouvement%2!=0)// Nombre impair : ordonnee
-            {
             	ligF = (mouvement < 0) ? ligF-1 : ligF+1;
-            	// Negatif : orientation nord
-            	// Positif : orientation sud
-            	orientation = (mouvement < 0) ? 'N' : 'S';
-            }
+
             else// Nombre pair : abscisse
-            {
             	colF = (mouvement < 0) ? colF-1 : colF+1;
-            	// Negatif : orientation ouest
-            	// Positif : orientation est
-            	orientation = (mouvement < 0) ? 'O' : 'E';
-            }
+            	
+            // Negatif impair : orientation nord
+            // Positif impair : orientation sud
+            // Negatif pair   : orientation ouest
+            // Positif pair   : orientation est
+            orientation = (mouvement%2!=0 ? (mouvement < 0 ? 'N' : 'S') : (mouvement < 0 ? 'O' : 'E'));
             
 
         }while (! sortieTrouvee(terrain , colF, ligF) );
