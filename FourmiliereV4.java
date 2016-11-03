@@ -16,7 +16,7 @@ public class FourmiliereV4
 		/*    VARIABLES     */
 		/*------------------*/
         int[][] terrain;
-        int ligF=0,colF=0,mouvement;
+        int ligF=0,colF=0,mouvement,cpt=0;
 		/*------------------*/
 		/*  INSTRUCTIONS    */
 		/*------------------*/
@@ -36,6 +36,7 @@ public class FourmiliereV4
 
             // Deplacement de la fourmi par le joueur
             mouvement=deplaceFourmi(terrain, colF, ligF);
+	    cpt++;
 
             if(mouvement!=0)
             {
@@ -53,7 +54,7 @@ public class FourmiliereV4
 
         }while (! sortieTrouvee(terrain , colF, ligF) );
 
-        System.out.println("Sortie trouvee !");
+        System.out.println("Sortie trouvee en " + cpt + " coups !");
 
     }
 
