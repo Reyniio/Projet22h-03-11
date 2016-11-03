@@ -15,13 +15,17 @@ public class FourmiliereV2
 		/*    VARIABLES     */
 		/*------------------*/
 		int[][] terrain;
-		int ligF,colF;
+		int ligF=0,colF=0;
 		/*------------------*/
 		/*  INSTRUCTIONS    */
 		/*------------------*/
 
 		// Initialisation du Terrain
 		terrain = FourmiliereV1.initTerrain();
+		
+		// Recherche de l'entree du parcours
+		for(int i=0 ; i<LARGEUR ; i++)	
+			if(terrain[0][i]==ENTREE) colF=i;
 
 		// Affichage du Terrain
 		System.out.println ( FourmiliereV1.tabEnChaine ( terrain ) );
