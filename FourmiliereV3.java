@@ -15,8 +15,8 @@ public class FourmiliereV3
 		/*------------------*/
 		/*    VARIABLES     */
 		/*------------------*/
-	int[][] terrain;
-        int ligF=0,colF=0;
+		int[][] terrain;
+        int ligF=0,colF=0,mouvement;
         char pos ='N';
 		/*------------------*/
 		/*  INSTRUCTIONS    */
@@ -30,13 +30,28 @@ public class FourmiliereV3
             if (terrain[0][i] == ENTREE) colF = i;
         }
 
-        while (! sortieTrouvee(terrain , colF, ligF) )
+    while (! sortieTrouvee(terrain , colF, ligF) )
 	{
+    		// Affichage du Terrain
+        	System.out.println ( FourmiliereV3.tabEnChaine ( terrain, colF, ligF ) );
 		
-	    // Deplacement de la fourmi par le joueur
-            deplaceFourmi(terrain , colF, ligF, pos);
-            // Affichage du Terrain
-            System.out.println ( FourmiliereV3.tabEnChaine ( terrain, colF, ligF ) );
+	        // Deplacement de la fourmi par le joueur
+            mouvement=deplaceFourmi(colF, ligF);
+            
+            if(mouvement!=0)
+            {
+            	if(mouvement%2!=0)
+            	{
+            		if(mouvement<0) ligF--;
+            		else			ligF++;
+            	}
+            	else
+            	{
+            		if(mouvement<0) colF--;
+            		else			colF++;
+            	}	
+            }
+
         }
 
 
@@ -126,10 +141,44 @@ public class FourmiliereV3
         }
 	
 
-	private static int[][] deplaceFourmi(int[][] terrain ,int  colF, int ligF, char pos)
+	private static int deplaceFourmi(int  colF, int ligF)
 	{
-		int[][] tab = terrain;
-		return tab;
+		
+		//Choix de l'objet Scanner pour plus de portabilite
+		Scanner scan = new Scanner(System.in);
+		String chaine;
+		char car;
+		boolean coupValide = false;
+		
+		do
+		{
+			System.out.println("Direction ? N S E O . . . ");
+			chaine = scan.nextLine();
+			car    = chaine.charAt(0);
+			switch(car)
+			{
+				case 'N' : return -1;
+				
+				
+				case 'S' : return 1;
+	
+				
+				case 'E' : return +2;
+				
+				
+				case 'O' : return -2;
+				
+				
+				default : System.out.println("Direction invalide");
+			}
+			
+			coupValide=true;
+			
+		}while(! coupValide);
+		
+		return 0;
 	}
+	
+
 		
 }
