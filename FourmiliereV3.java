@@ -142,8 +142,8 @@ public class FourmiliereV3 {
             //Il ne faut pas essayer un chaine.charAt(0) sur une chaine NULL
             if (chaine.length() != 0) car = chaine.charAt(0);
 
-            //Nombre impair pour les abscisses et pair pour les ordonnees
-            //Nombre positif pour une incrementation et negatif pour une decrementation
+			//Nombre impair pour les ordonnees et pair pour les abscisses
+			//Nombre positif pour une incrementation et negatif pour une decrementation
 
             switch (car) {
                 case 'N':
