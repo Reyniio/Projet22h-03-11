@@ -16,7 +16,7 @@ public class FourmiliereV3
 		/*    VARIABLES     */
 		/*------------------*/
 		int[][] terrain;
-        int ligF=0,colF=0,mouvement;
+        	int ligF=0,colF=0,mouvement;
 		/*------------------*/
 		/*  INSTRUCTIONS    */
 		/*------------------*/
@@ -24,12 +24,12 @@ public class FourmiliereV3
 		// Initialisation du Terrain
 		terrain = FourmiliereV3.initTerrain();
 
-        // Recherche de l'entree du parcours
-        for(int i=0 ; i<DIM  ; i++) {
-            if (terrain[0][i] == ENTREE) colF = i;
-        }
+		// Recherche de l'entree du parcours
+		for(int i=0 ; i<DIM  ; i++) {
+		    if (terrain[0][i] == ENTREE) colF = i;
+		}
 
-	    while (! sortieTrouvee(terrain , colF, ligF) )
+	    	do 
 		{
 	    		// Affichage du Terrain
 	        	System.out.println ( FourmiliereV3.tabEnChaine ( terrain, colF, ligF ) );
@@ -51,9 +51,9 @@ public class FourmiliereV3
 	            	}	
 	            }
 	
-	    }
+	    }while (! sortieTrouvee(terrain , colF, ligF) );
 
-		System.out.println("Sortie trouvee !");
+	    System.out.println("Sortie trouvee !");
 
 	}
 
