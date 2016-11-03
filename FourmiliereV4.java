@@ -137,8 +137,8 @@ public class FourmiliereV4 {
 
             nb = (int)((Math.random() * 4));
 
-            //Nombre impair pour les abscisses et pair pour les ordonnees
-            //Nombre positif pour une incrementation et negatif pour une decrementation
+			//Nombre impair pour les ordonnees et pair pour les abscisses
+			//Nombre positif pour une incrementation et negatif pour une decrementation
 
             switch (nb) {
                 case 0:
