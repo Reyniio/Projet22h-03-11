@@ -142,59 +142,39 @@ public class FourmiliereV4
     }
 
 
-    private static int deplaceFourmi(int[][] tab, int  colF, int ligF)
+   private static int deplaceFourmi(int[][] tab, int  colF, int ligF)
     {
 
-        //Choix de l'objet Scanner pour plus de portabilite
-        Scanner scan = new Scanner(System.in);
-        String chaine;
-        char car='a';//Il faut un caractere different de N S E O
+        int nb;
 
         do
         {
-            /*
-            System.out.println("Direction ? N S E O . . . ");
-            chaine = scan.nextLine();
-            //Il ne faut pas essayer un chaine.charAt(0) sur une chaine NULL
-            if(chaine.length()!=0) car = chaine.charAt(0);
+
+             nb =(int)((Math.random()*4));
 
             //Nombre impair pour les abscisses et pair pour les ordonnees
             //Nombre positif pour une incrementation et negatif pour une decrementation
-
-            switch(car)
+            
+            switch(nb)
             {
-                case 'N' :
+                case 0 :
                     if(ligF-1>=0)
                         if(tab[ligF-1][colF]!=MUR) return -1;
                     break;
-
-                case 'S' :
+                case 1 :
                     if(ligF+1<DIM)
                         if(tab[ligF+1][colF]!=MUR) return +1;
                     break;
-
-
-                case 'E' :
+                case 2 :
                     if(colF+2<DIM)
                         if(tab[ligF][colF+1]!=MUR) return +2;
                     break;
-
-
-                case 'O' :
+                case 3 :
                     if(colF-2>=0)
                         if(tab[ligF][colF-1]!=MUR) return -2;
                     break;
-
-                ///Un default n'est pas utile ici, les cas par defauts sont geres en sortie de boucle
+                ///Un default n'est pas utile ici
             }
-
-            // Quand on arrive ici, la direction est invalide
-            System.out.println("Direction invalide");*/
-            do{
-                int random =(int)((Math.random()*5)-2);
-                return random;
-            }while( colF-2<0 || colF+2>DIM || ligF+1<DIM || ligF-1<=0  );
-
 
         }while(true);
 
