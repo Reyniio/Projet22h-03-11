@@ -184,7 +184,7 @@ public class FourmiliereV3
 						if(tab[ligF][colF-1]!=MUR) return -2;
 					break;
 					
-				///Un default n'est pas utile ici, les cas par défauts sont gérés en sortie de boucle
+				///Un default n'est pas utile ici, les cas par defauts sont geres en sortie de boucle
 			}
 			
 			// Quand on arrive ici, la direction est invalide
