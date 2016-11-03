@@ -43,31 +43,21 @@ public class FourmiliereV5
             nbTentative++;
 
 
-            if(mouvement%2!=0)
+            // Negatif : decrementation
+            // Positif : incrementation
+            if(mouvement%2!=0)// Nombre impair : ordonnee
             {
-                if(mouvement<0) 
-                {
-                	ligF--;
-                	orientation='N';
-                }
-                else
-                {
-                	ligF++;
-                	orientation='S';
-                }
+            	ligF = (mouvement < 0) ? ligF-1 : ligF+1;
+            	// Negatif : orientation nord
+            	// Positif : orientation sud
+            	orientation = (mouvement < 0) ? 'N' : 'S';
             }
-            else
+            else// Nombre pair : abscisse
             {
-                if(mouvement<0)
-                {
-                	colF--;
-                	orientation='O';
-                }
-                else
-                {
-                	colF++;
-                	orientation='E';
-                }
+            	colF = (mouvement < 0) ? colF-1 : colF+1;
+            	// Negatif : orientation ouest
+            	// Positif : orientation est
+            	orientation = (mouvement < 0) ? 'O' : 'E';
             }
             
 
