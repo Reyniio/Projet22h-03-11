@@ -1,9 +1,9 @@
 import java.util.Scanner;
-public class FourmiliereV5
+public class FourmiliereV4
 {
     /*----------------------------------------------------------------*/
-	/* Constantes accessibles par toutes les methodes de cette classe */
-	/*----------------------------------------------------------------*/
+    /* Constantes accessibles par toutes les methodes de cette classe */
+    /*----------------------------------------------------------------*/
     private static final int MUR      = -1;
     private static final int ENTREE   = -2;
     private static final int SORTIE_1 = -3;
@@ -12,17 +12,17 @@ public class FourmiliereV5
 
     public static void main(String[] a)
     {
-		/*------------------*/
-		/*    VARIABLES     */
-		/*------------------*/
+	/*------------------*/
+	/*    VARIABLES     */
+	/*------------------*/
         int[][] terrain;
-        int ligF=0,colF=0,mouvement;
-		/*------------------*/
-		/*  INSTRUCTIONS    */
-		/*------------------*/
+        int ligF=0,colF=0,mouvement,nbTentative=0;
+	/*------------------*/
+	/*  INSTRUCTIONS    */
+	/*------------------*/
 
         // Initialisation du Terrain
-        terrain = FourmiliereV5.initTerrain();
+        terrain = FourmiliereV4.initTerrain();
 
         // Recherche de l'entree du parcours
         for(int i=0 ; i<DIM  ; i++) {
@@ -32,28 +32,31 @@ public class FourmiliereV5
         do
         {
             // Affichage du Terrain
-            System.out.println ( FourmiliereV5.tabEnChaine ( terrain, colF, ligF ) );
+            System.out.println ( FourmiliereV4.tabEnChaine ( terrain, colF, ligF ) );
 
             // Deplacement de la fourmi par le joueur
             mouvement=deplaceFourmi(terrain, colF, ligF);
+            nbTentative++;
 
             if(mouvement!=0)
             {
                 if(mouvement%2!=0)
                 {
                     if(mouvement<0) ligF--;
-                    else			ligF++;
+                    else	    ligF++;
                 }
                 else
                 {
                     if(mouvement<0) colF--;
-                    else			colF++;
+                    else	    colF++;
                 }
             }
 
         }while (! sortieTrouvee(terrain , colF, ligF) );
 
-        System.out.println("Sortie trouvee !");
+        // Affichage du Terrain avec la fourmi sur une des sorties
+        System.out.println ( FourmiliereV4.tabEnChaine ( terrain, colF, ligF ) );
+        System.out.println("Sortie trouvee en " + nbTentative + " coups !");
 
     }
 
@@ -142,7 +145,7 @@ public class FourmiliereV5
     }
 
 
-   private static int deplaceFourmi(int[][] tab, int  colF, int ligF)
+    private static int deplaceFourmi(int[][] tab, int  colF, int ligF)
     {
 
         int nb;
@@ -154,7 +157,7 @@ public class FourmiliereV5
 
             //Nombre impair pour les abscisses et pair pour les ordonnees
             //Nombre positif pour une incrementation et negatif pour une decrementation
-            
+
             switch(nb)
             {
                 case 0 :
