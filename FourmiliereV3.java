@@ -16,7 +16,7 @@ public class FourmiliereV3
 		/*    VARIABLES     */
 		/*------------------*/
 		int[][] terrain;
-        int ligF=0,colF=0,move;
+        int ligF=0,colF=0;
         char pos ='N';
         Scanner sc = new Scanner(System.in);
 		/*------------------*/
