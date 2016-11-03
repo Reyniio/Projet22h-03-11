@@ -8,14 +8,19 @@ public class FourmiliereV5
     private static final int SORTIE_1 = -3;
     private static final int SORTIE_2 = -4;
     private static final int DIM      = 15;
+    
+    /*----------------------------------------------------------------*/
+    /* Variable de classe identique pour chaques instances            */
+    /*----------------------------------------------------------------*/
+    static char orientation = 'S';
 
     public static void main(String[] a)
     {
 	/*------------------*/
 	/*    VARIABLES     */
 	/*------------------*/
-        int[][] terrain;
-        int ligF=0,colF=0,mouvement,nbTentative=0;
+    int[][] terrain;
+    int ligF=0,colF=0,mouvement,nbTentative=0;
 	/*------------------*/
 	/*  INSTRUCTIONS    */
 	/*------------------*/
@@ -37,19 +42,34 @@ public class FourmiliereV5
             mouvement=aMainDroite(terrain, colF, ligF);
             nbTentative++;
 
-            if(mouvement!=0)
+
+            if(mouvement%2!=0)
             {
-                if(mouvement%2!=0)
+                if(mouvement<0) 
                 {
-                    if(mouvement<0) ligF--;
-                    else	    ligF++;
+                	ligF--;
+                	orientation='N';
                 }
                 else
                 {
-                    if(mouvement<0) colF--;
-                    else	    colF++;
+                	ligF++;
+                	orientation='S';
                 }
             }
+            else
+            {
+                if(mouvement<0)
+                {
+                	colF--;
+                	orientation='O';
+                }
+                else
+                {
+                	colF++;
+                	orientation='E';
+                }
+            }
+            
 
         }while (! sortieTrouvee(terrain , colF, ligF) );
 
@@ -64,20 +84,20 @@ public class FourmiliereV5
     {
         int[][] tab = new int[DIM][DIM];
         int[][] bloc = new int[][] { {-1,-1,-1,-1,-1,-1,-1,-2 },
-                                     {-1, 0,-1, 0,-1, 0, 0, 0 },
-                                     {-1, 0, 0, 0, 0, 0, 0,-1 },
-                                     {-1, 0,-1, 0,-1, 0, 0,-1 },
-                                     {-1, 0, 0, 0,-1, 0, 0, 0 },
-                                     {-1, 0, 0, 0,-1, 0, 0,-1 },
-                                     {-1,-1,-1, 0,-1,-1,-1,-1 },
-                                     {-1, 0, 0, 0, 0, 0, 0, 0 },
-                                     {-1, 0, 0,-1,-1,-1,-1,-1 },
-                                     {-1, 0,-1, 0, 0, 0, 0,-1 },
-                                     {-1, 0, 0, 0,-1, 0, 0, 0 },
-                                     {-1, 0,-1, 0,-1, 0,-1,-1 },
-                                     {-1, 0, 0, 0,-1, 0, 0,-1 },
-                                     {-1, 0, 0, 0, 0, 0, 0,-1 },
-                                     {-1,-1,-1,-3,-1,-1,-1,-1 }  };
+                {-1, 0,-1, 0,-1, 0, 0, 0 },
+                {-1, 0, 0, 0, 0, 0, 0,-1 },
+                {-1, 0,-1, 0,-1, 0, 0,-1 },
+                {-1, 0, 0, 0,-1, 0, 0, 0 },
+                {-1, 0, 0, 0,-1, 0, 0,-1 },
+                {-1,-1,-1, 0,-1,-1,-1,-1 },
+                {-1, 0, 0, 0, 0, 0, 0, 0 },
+                {-1, 0, 0,-1,-1,-1,-1,-1 },
+                {-1, 0,-1, 0, 0, 0, 0,-1 },
+                {-1, 0, 0, 0,-1, 0, 0, 0 },
+                {-1, 0,-1, 0,-1, 0,-1,-1 },
+                {-1, 0, 0, 0,-1, 0, 0,-1 },
+                {-1, 0, 0, 0, 0, 0, 0,-1 },
+                {-1,-1,-1,-3,-1,-1,-1,-1 }  };
 
 
 
@@ -146,14 +166,111 @@ public class FourmiliereV5
 
     private static int aMainDroite(int[][] tab, int  colF, int ligF)
     {
+ 	
+ 		switch(orientation)
+ 		{
+ 		
+ 		case 'N' : 
+ 			
+ 	    if(colF+1<DIM)
+           if(tab[ligF][colF+1]!=MUR) 
+        
+           	return +2;
+ 	   
+		    else if(ligF-1>=0)
+			    if(tab[ligF-1][colF]!=MUR) 
+	        
+			   return -1;
+	 		
+		    else if(colF-1>=0)
+		        if(tab[ligF][colF-1]!=MUR) 
+	  
+		        	return -2;
+ 	   
+		       else  if(ligF+1<DIM)
+	            if(tab[ligF+1][colF]!=MUR)
 
-        do
-        {
-        	
+	            	return +1;
+	        
+	 	break;
+	 	
+	 	case 'S' : 
+      
+			 if(colF-1>=0)
+			       if(tab[ligF][colF-1]!=MUR) 
+		            
+			    	   return -2;
+			    
+				    else if(ligF+1<DIM)
+				    	 if(tab[ligF+1][colF]!=MUR) 
+				          
+				    		 return +1;
+			 
+				  else if(colF+1<DIM)
+					            if(tab[ligF][colF+1]!=MUR) 
+					          
+					            	return +2;
 
-        }while(true);
+			 
+		 else if(ligF-1>=0)
+            if(tab[ligF-1][colF]!=MUR) 
+           
+            	return -1;
+	    
 
+
+
+	 	break;
+	 	
+	 	case 'E' : 
+	 		
+	         if(ligF+1<DIM)
+	            if(tab[ligF+1][colF]!=MUR) 
+	            	return +1;
+	         
+	            else  if(colF+1<DIM)
+	                if(tab[ligF][colF+1]!=MUR) 
+	                	return +2;
+	        
+				       else if(ligF-1>=0)
+				            if(tab[ligF-1][colF]!=MUR) 
+				           
+				            	return -1;
+		        
+		         else if(colF-1>=0)
+				     if(tab[ligF][colF-1]!=MUR) 
+				    	 return -2;
+
+
+
+	 	break;
+	 	
+	 	case 'O' :	
+	 		
+			  if(ligF-1>=0)
+				   if(tab[ligF-1][colF]!=MUR) 
+					   return -1;
+			  
+				   else if(colF-1>=0)
+			       if(tab[ligF][colF-1]!=MUR) 
+			    	   return -2;
+			  
+			       else if(ligF+1<DIM)
+				            if(tab[ligF+1][colF]!=MUR) 
+				            	return +1;
+	        
+	
+	         
+	         else if(colF+1<DIM)
+			       if(tab[ligF][colF+1]!=MUR) 
+			    	   return +2;
+		      
+
+	 	break;
+ 		}
+ 
+
+        
+        return 0;
     }
-
-
 }
