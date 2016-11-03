@@ -35,16 +35,16 @@ public class FourmiliereV3
             String move = sc.next();
                     switch(pos) {
                         case 'N':
-                            colF -= move;
+                            colF -= colF;
                             break;
                         case 'E':
-                            ligF += move;
+                            ligF += ligF;
                             break;
                         case 'W':
-                            ligF -= move;
+                            ligF -= ligF;
                             break;
                         case 'S':
-                            colF += move;
+                            colF += colF;
                             break;
 
                         }
