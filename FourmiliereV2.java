@@ -95,6 +95,9 @@ public class FourmiliereV2
 					case SORTIE_2 : sRet+= " "; break;
 				}
 			 }
+				while (tab[i][j]!=SORTIE_1 ||tab[i][j]!=SORTIE_2 ){
+
+				}
 		    }
 	    	sRet+= "\n";
 		}	
