@@ -54,7 +54,7 @@ public class FourmiliereV3
 	    }while (! sortieTrouvee(terrain , colF, ligF) );
 
 	    // Affichage du Terrain lorsque l'on a trouve la sortie
-            System.out.println ( FourmiliereV3.tabEnChaine ( terrain, colF, ligF ) );
+            System.out.println ( FourmiliereV3.enChaine ( terrain, colF, ligF ) );
 	    System.out.println("Sortie trouvee !");
 
 	}
