@@ -36,7 +36,8 @@ public class FourmiliereV3 {
             // Deplacement de la fourmi par le joueur
             mouvement = deplaceFourmi(colF, ligF);
 
-            if (mouvement != 0) {
+            if (mouvement != 0)
+            {
                 if (mouvement % 2 != 0) //impair = ligne
                 {
                     if (mouvement < 0) //negatif = decrementation
