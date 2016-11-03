@@ -31,7 +31,8 @@ public class FourmiliereV3
             if (terrain[0][i] == ENTREE) colF = i;
         }
 
-        while (! sortieTrouvee ){
+        while (! sortieTrouvee(terrain , colF, ligF) )
+	{
             char move = sc.next().charAt(0);
 
                     switch(move) {
