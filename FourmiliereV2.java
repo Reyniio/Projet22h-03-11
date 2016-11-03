@@ -7,6 +7,7 @@ public class FourmiliereV2
 	private static final int ENTREE   = -2;
 	private static final int SORTIE_1 = -3;
 	private static final int SORTIE_2 = -4;
+	private static final int FOURMI   = -5;
 
 
 	public static void main(String[] a)
