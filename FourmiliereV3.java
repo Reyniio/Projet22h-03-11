@@ -50,10 +50,10 @@ public class FourmiliereV3
                         }
 
 
-
+            // Affichage du Terrain
+            System.out.println ( FourmiliereV3.tabEnChaine ( terrain, colF, ligF ) );
         }
-		// Affichage du Terrain
-		System.out.println ( FourmiliereV3.tabEnChaine ( terrain, colF, ligF ) );
+
 
 	}
 
