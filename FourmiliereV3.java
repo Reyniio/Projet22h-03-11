@@ -28,6 +28,7 @@ public class FourmiliereV3 {
             if (terrain[0][i] == ENTREE) colF = i;
         }
 
+
         while (!sortieTrouvee(terrain, colF, ligF)) {
             // Affichage du Terrain
             System.out.println(FourmiliereV3.tabEnChaine(terrain, colF, ligF));
@@ -36,16 +37,22 @@ public class FourmiliereV3 {
             mouvement = deplaceFourmi(colF, ligF);
 
             if (mouvement != 0) {
-                if (mouvement % 2 != 0) {
-                    if (mouvement < 0) {
+                if (mouvement % 2 != 0) //impair = ligne
+                {
+                    if (mouvement < 0) //negatif = decrementation
+                    {
                         ligF--;
-                    } else {
+                    } else //positif = incrementation
+                    {
                         ligF++;
                     }
-                } else {
-                    if (mouvement < 0) {
+                } else //pair = colonne
+                {
+                    if (mouvement < 0) //negatif = decrementation
+                    {
                         colF--;
-                    } else {
+                    } else //positif = incrementation
+                    {
                         colF++;
                     }
                 }
