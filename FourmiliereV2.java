@@ -55,20 +55,20 @@ public class FourmiliereV2
 		                          
 		             
 		 // recopie du tableau bloc dans la partie gauche du tableau tab
-		for (int i=0 ; i<15 ; i++)
+		for (int i=0 ; i<DIM ; i++)
 		{
-		    for(int j=0 ; j<8 ; j++)
+		    for(int j=0 ; j<DIM/2+1 ; j++)
 		    {
 		    	tab[i][j]=bloc[i][j];
 		    }
 		}		                             
 		                             
 		// construction de la partie droite du terrain selon la symetrie verticale
-		for (int i=0 ; i<15 ; i++)
+		for (int i=0 ; i<DIM/2 ; i++)
 		{
-			for(int j=7 ; j>=0 ; j--)
+			for(int j=DIM/2 ; j>=0 ; j--)
 			{
-				tab[i][7+7-j]=bloc[i][j];
+				tab[i][DIM-1-j]=bloc[i][j];
 			}
 		}
 
@@ -79,9 +79,9 @@ public class FourmiliereV2
 	{
 		String sRet="";
 
-		for (int i=0 ; i<15 ; i++)
+		for (int i=0 ; i<DIM ; i++)
 		{
-		    for(int j=0 ; j<15 ; j++)
+		    for(int j=0 ; j<DIM ; j++)
 		    {	
 			if(fourmiPosX==j && fourmiPosY==i)
 			{
