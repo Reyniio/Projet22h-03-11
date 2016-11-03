@@ -42,13 +42,18 @@ public class FourmiliereV3
             {
             	if(mouvement%2!=0)
             	{
-            		if(mouvement<0) ligF--;
-            		else			ligF++;
+            		if(mouvement<0) {
+                        ligF--;
+                    }else{
+                        ligF++;
+                    }
             	}
             	else
             	{
-            		if(mouvement<0) colF--;
-            		else			colF++;
+            		if(mouvement<0){
+                        colF--;
+                    }else{
+                        colF++;
             	}	
             }
 
