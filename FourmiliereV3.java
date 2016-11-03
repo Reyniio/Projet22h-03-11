@@ -31,8 +31,9 @@ public class FourmiliereV3
             if (terrain[0][i] == ENTREE) colF = i;
         }
 
-        while (ligF!=SORTIE_1 ||ligF!=SORTIE_2 ){
+        while (! sortieTrouvee ){
             char move = sc.next().charAt(0);
+
                     switch(move) {
                         case 'N':
                             colF -= colF;
@@ -131,6 +132,12 @@ public class FourmiliereV3
 
 
             return sRet;
+
+        }
+	
+	private static boolean sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY)
+        {
+           return (tab[fourmiPosY][fourmiPosX]==SORTIE_1 || tab[fourmiPosY][fourmiPosX]==SORTIE_2);
 
         }
 }
