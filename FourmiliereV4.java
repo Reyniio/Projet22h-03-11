@@ -22,9 +22,9 @@ public class FourmiliereV4 {
         terrain = FourmiliereV4.initTerrain();
 
         // Recherche de l'entree du parcours
-        for (int i = 0; i < DIM; i++) {
+        for (int i = 0; i < DIM; i++) 
             if (terrain[0][i] == ENTREE) colF = i;
-        }
+        
 
         do {
             // Affichage du Terrain
@@ -34,13 +34,13 @@ public class FourmiliereV4 {
             mouvement = deplaceFourmi(terrain, colF, ligF);
             nbTentative++;
 
-            if (mouvement % 2 != 0) {
-                if (mouvement < 0) ligF--;
-                else ligF++;
-            } else {
-                if (mouvement < 0) colF--;
-                else colF++;
-            }
+            // Negatif : decrementation
+            // Positif : incrementation
+            if(mouvement%2!=0)// Nombre impair : ordonnee
+            	ligF = (mouvement < 0) ? ligF-1 : ligF+1;
+		
+            else// Nombre pair : abscisse
+            	colF = (mouvement < 0) ? colF-1 : colF+1;
 
         } while (!sortieTrouvee(terrain, colF, ligF));
 
