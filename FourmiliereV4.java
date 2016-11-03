@@ -1,137 +1,133 @@
 import java.util.Scanner;
-public class FourmiliereV4 {
+public class FourmiliereV4
+{
     /*----------------------------------------------------------------*/
- /* Constantes accessibles par toutes les méthodes de cette classe */
- /*----------------------------------------------------------------*/
-    private static final int MUR = -1;
-    private static final int ENTREE = -2;
+	/* Constantes accessibles par toutes les methodes de cette classe */
+	/*----------------------------------------------------------------*/
+    private static final int MUR      = -1;
+    private static final int ENTREE   = -2;
     private static final int SORTIE_1 = -3;
     private static final int SORTIE_2 = -4;
-    private static final int DIM = 15;
+    private static final int DIM      = 15;
 
-    public static void main(String[] a) {
-  /*------------------*/
-  /*    VARIABLES     */
-  /*------------------*/
+    public static void main(String[] a)
+    {
+		/*------------------*/
+		/*    VARIABLES     */
+		/*------------------*/
         int[][] terrain;
-        int ligF = 0, colF = 0, mouvement;
-        char pos = 'N';
-  /*------------------*/
-  /*  INSTRUCTIONS    */
-  /*------------------*/
+        int ligF=0,colF=0,mouvement;
+		/*------------------*/
+		/*  INSTRUCTIONS    */
+		/*------------------*/
 
         // Initialisation du Terrain
         terrain = FourmiliereV4.initTerrain();
 
         // Recherche de l'entree du parcours
-        for (int i = 0; i < DIM; i++) {
+        for(int i=0 ; i<DIM  ; i++) {
             if (terrain[0][i] == ENTREE) colF = i;
         }
 
-
-        while (!sortieTrouvee(terrain, colF, ligF)) {
+        do
+        {
             // Affichage du Terrain
-            System.out.println(FourmiliereV4.tabEnChaine(terrain, colF, ligF));
+            System.out.println ( FourmiliereV4.tabEnChaine ( terrain, colF, ligF ) );
 
             // Deplacement de la fourmi par le joueur
-            mouvement = deplaceFourmi(colF, ligF);
+            mouvement=deplaceFourmi(terrain, colF, ligF);
 
-            if (mouvement != 0)
+            if(mouvement!=0)
             {
-                if (mouvement % 2 != 0) //impair = ligne
+                if(mouvement%2!=0)
                 {
-                    if (mouvement < 0) //negatif = decrementation
-                    {
-                        ligF--;
-                    } else //positif = incrementation
-                    {
-                        ligF++;
-                    }
-                } else //pair = colonne
+                    if(mouvement<0) ligF--;
+                    else			ligF++;
+                }
+                else
                 {
-                    if (mouvement < 0) //negatif = decrementation
-                    {
-                        colF--;
-                    } else //positif = incrementation
-                    {
-                        colF++;
-                    }
+                    if(mouvement<0) colF--;
+                    else			colF++;
                 }
             }
 
-        }
+        }while (! sortieTrouvee(terrain , colF, ligF) );
 
+        System.out.println("Sortie trouvee !");
 
     }
 
-    private static int[][] initTerrain() {
+
+    private static int[][] initTerrain()
+    {
         int[][] tab = new int[DIM][DIM];
         int[][] bloc = new int[][] { {-1,-1,-1,-1,-1,-1,-1,-2 },
-                                     {-1, 0,-1, 0,-1, 0, 0, 0 },
-                                     {-1, 0, 0, 0, 0, 0, 0,-1 },
-                                     {-1, 0,-1, 0,-1, 0, 0,-1 },
-                                     {-1, 0, 0, 0,-1, 0, 0, 0 },
-                                     {-1, 0, 0, 0,-1, 0, 0,-1 },
-                                     {-1,-1,-1, 0,-1,-1,-1,-1 },
-                                     {-1, 0, 0, 0, 0, 0, 0, 0 },
-                                     {-1, 0, 0,-1,-1,-1,-1,-1 },
-                                     {-1, 0,-1, 0, 0, 0, 0,-1 },
-                                     {-1, 0, 0, 0,-1, 0, 0, 0 },
-                                     {-1, 0,-1, 0,-1, 0,-1,-1 },
-                                     {-1, 0, 0, 0,-1, 0, 0,-1 },
-                                     {-1, 0, 0, 0, 0, 0, 0,-1 },
-                                     {-1,-1,-1,-3,-1,-1,-1,-1 }  };
+                {-1, 0,-1, 0,-1, 0, 0, 0 },
+                {-1, 0, 0, 0, 0, 0, 0,-1 },
+                {-1, 0,-1, 0,-1, 0, 0,-1 },
+                {-1, 0, 0, 0,-1, 0, 0, 0 },
+                {-1, 0, 0, 0,-1, 0, 0,-1 },
+                {-1,-1,-1, 0,-1,-1,-1,-1 },
+                {-1, 0, 0, 0, 0, 0, 0, 0 },
+                {-1, 0, 0,-1,-1,-1,-1,-1 },
+                {-1, 0,-1, 0, 0, 0, 0,-1 },
+                {-1, 0, 0, 0,-1, 0, 0, 0 },
+                {-1, 0,-1, 0,-1, 0,-1,-1 },
+                {-1, 0, 0, 0,-1, 0, 0,-1 },
+                {-1, 0, 0, 0, 0, 0, 0,-1 },
+                {-1,-1,-1,-3,-1,-1,-1,-1 }  };
 
 
 
 
         // recopie du tableau bloc dans la partie gauche du tableau tab
-        for (int i = 0; i < DIM; i++) {
-            for (int j = 0; j < DIM / 2 + 1; j++) {
-                tab[i][j] = bloc[i][j];
+        for (int i=0 ; i<DIM ; i++)
+        {
+            for(int j=0 ; j<DIM/2+1 ; j++)
+            {
+                tab[i][j]=bloc[i][j];
             }
         }
 
         // construction de la partie droite du terrain selon la symetrie verticale
-        for (int i = 0; i < DIM; i++) {
-            for (int j = DIM / 2; j >= 0; j--) {
-                tab[i][DIM - 1 - j] = bloc[i][j];
+        for (int i=0 ; i<DIM ; i++)
+        {
+            for(int j=DIM/2 ; j>=0 ; j--)
+            {
+                tab[i][DIM-1-j]=bloc[i][j];
             }
         }
 
         return tab;
     }
 
-    private static String tabEnChaine(int[][] tab, int fourmiPosX, int fourmiPosY) {
-        String sRet = "";
+    private static String tabEnChaine(int[][] tab, int fourmiPosX, int fourmiPosY)
+    {
+        String sRet="";
 
-        for (int i = 0; i < DIM; i++) {
-            for (int j = 0; j < DIM; j++) {
-                if (fourmiPosX == j && fourmiPosY == i) {
+        for (int i=0 ; i<DIM ; i++)
+        {
+            for(int j=0 ; j<DIM ; j++)
+            {
+                if(fourmiPosX==j && fourmiPosY==i)
+                {
                     // c'est l'emplacement de la fourmi, on la dessine
-                    sRet += ".";
-                } else {
-                    switch (tab[i][j]) {
-                        case 0:
-                            sRet += " ";
-                            break;
-                        case MUR:
-                            sRet += "X";
-                            break;
-                        case ENTREE:
-                            sRet += " ";
-                            break;
-                        case SORTIE_1:
-                            sRet += " ";
-                            break;
-                        case SORTIE_2:
-                            sRet += " ";
-                            break;
+                    sRet+= ".";
+                }
+                else
+                {
+                    switch(tab[i][j])
+                    {
+                        case 0        : sRet+= " "; break;
+                        case MUR      : sRet+= "X"; break;
+                        case ENTREE   : sRet+= " "; break;
+                        case SORTIE_1 : sRet+= " "; break;
+                        case SORTIE_2 : sRet+= " "; break;
                     }
                 }
 
             }
-            sRet += "\n";
+            sRet+= "\n";
         }
 
 
@@ -139,54 +135,70 @@ public class FourmiliereV4 {
 
     }
 
-    private static boolean sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY) {
-        return (tab[fourmiPosY][fourmiPosX] == SORTIE_1 ||
-                tab[fourmiPosY][fourmiPosX] == SORTIE_2);
+    private static boolean sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY)
+    {
+        return (tab[fourmiPosY][fourmiPosX]==SORTIE_1 ||
+                tab[fourmiPosY][fourmiPosX]==SORTIE_2);
     }
 
 
-    private static int deplaceFourmi(int colF, int ligF) {
+    private static int deplaceFourmi(int[][] tab, int  colF, int ligF)
+    {
 
         //Choix de l'objet Scanner pour plus de portabilite
         Scanner scan = new Scanner(System.in);
         String chaine;
-        char car;
-        boolean coupValide = false;
+        char car='a';//Il faut un caractere different de N S E O
 
-        do {
+        do
+        {
+            /*
             System.out.println("Direction ? N S E O . . . ");
             chaine = scan.nextLine();
-            car = chaine.charAt(0);
+            //Il ne faut pas essayer un chaine.charAt(0) sur une chaine NULL
+            if(chaine.length()!=0) car = chaine.charAt(0);
 
             //Nombre impair pour les abscisses et pair pour les ordonnees
             //Nombre positif pour une incrementation et negatif pour une decrementation
 
-            switch (car) {
-                case 'N':
-                    return -1;
+            switch(car)
+            {
+                case 'N' :
+                    if(ligF-1>=0)
+                        if(tab[ligF-1][colF]!=MUR) return -1;
+                    break;
+
+                case 'S' :
+                    if(ligF+1<DIM)
+                        if(tab[ligF+1][colF]!=MUR) return +1;
+                    break;
 
 
-                case 'S':
-                    return 1;
+                case 'E' :
+                    if(colF+2<DIM)
+                        if(tab[ligF][colF+1]!=MUR) return +2;
+                    break;
 
 
-                case 'E':
-                    return +2;
+                case 'O' :
+                    if(colF-2>=0)
+                        if(tab[ligF][colF-1]!=MUR) return -2;
+                    break;
 
-
-                case 'O':
-                    return -2;
-
-
-                default:
-                    System.out.println("Direction invalide");
+                ///Un default n'est pas utile ici, les cas par defauts sont geres en sortie de boucle
             }
 
-            coupValide = true;
+            // Quand on arrive ici, la direction est invalide
+            System.out.println("Direction invalide");*/
+            do{
+                int random =(int)((Math.random()*5)-2);
+                return random;
+            }while( colF-2<0 || colF+2>DIM || ligF+1<DIM || ligF-1<=0  );
 
-        } while (!coupValide);
 
-        return 0;
+        }while(true);
+
+
     }
 
 
