@@ -13,7 +13,6 @@ public class FourmiliereV2 {
         /*    VARIABLES     */
         /*------------------*/
         int[][] terrain;
-        //La fourmi sera toujours sur la ligne 1
         int ligF = 0, colF = 0;
         /*------------------*/
         /*  INSTRUCTIONS    */
@@ -22,7 +21,7 @@ public class FourmiliereV2 {
         // Initialisation du Terrain
         terrain = FourmiliereV2.initTerrain();
 
-        // Recherche de l'entree du parcours
+        // Recherche de la colonne de l'entree du parcours, l'entree sera toujours sur la ligne 0
         for (int i = 0; i < DIM; i++) {
             if (terrain[0][i] == ENTREE) colF = i;
         }
