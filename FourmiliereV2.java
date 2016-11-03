@@ -28,7 +28,7 @@ public class FourmiliereV2
 			if (terrain[0][i] == ENTREE) colF = i;
 		}
 		// Affichage du Terrain
-		System.out.println ( FourmiliereV1.tabEnChaine ( terrain ) );
+		System.out.println ( FourmiliereV2.tabEnChaine ( terrain ) );
 
 	}
 
