@@ -24,11 +24,11 @@ public class FourmiliereV2
 		terrain = FourmiliereV2.initTerrain();
 		
 		// Recherche de l'entree du parcours
-		for(int i=0 ; i<LARGEUR ; i++) {
+		for(int i=0 ; i<DIM ; i++) {
 			if (terrain[0][i] == ENTREE) colF = i;
 		}
 		// Affichage du Terrain
-		System.out.println ( FourmiliereV2.tabEnChaine ( terrain ) );
+		System.out.println ( FourmiliereV2.tabEnChaine ( terrain, colF, ligF ) );
 
 	}
 
