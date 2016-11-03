@@ -29,27 +29,24 @@ public class FourmiliereV3
 		    if (terrain[0][i] == ENTREE) colF = i;
 		}
 
-	    	do 
+	        do 
 		{
 	    	    // Affichage du Terrain
 	      	    System.out.println ( FourmiliereV3.enChaine ( terrain, colF, ligF ) );
 			
-		    // Deplacement de la fourmi par le joueur
+		        // Deplacement de la fourmi par le joueur
 	            mouvement=deplaceFourmi(terrain, colF, ligF);
 	            
-	            if(mouvement!=0)
+	            if(mouvement%2!=0)
 	            {
-	            	if(mouvement%2!=0)
-	            	{
-	            		if(mouvement<0) ligF--;
-	            		else			ligF++;
-	            	}
-	            	else
-	            	{
-	            		if(mouvement<0) colF--;
-	            		else			colF++;
-	            	}	
+	                if(mouvement<0) ligF--;
+	                else	        ligF++;
 	            }
+	            else
+	            {
+	                if(mouvement<0) colF--;
+	                else	        colF++;
+	            } 
 	
 	    }while (! sortieTrouvee(terrain , colF, ligF) );
 
