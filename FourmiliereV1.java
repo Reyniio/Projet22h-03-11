@@ -83,9 +83,9 @@ public class FourmiliereV1
 		    	element = tab[i][j];
 		    	switch(element)
 		    	{
-		    		case 0 		 : sRet+= " "; break;
-		    		case MUR 	 : sRet+= "X"; break;
-		    		case ENTREE  : sRet+= " "; break;
+		    		case 0 	      : sRet+= " "; break;
+		    		case MUR      : sRet+= "X"; break;
+		    		case ENTREE   : sRet+= " "; break;
 		    		case SORTIE_1 : sRet+= " "; break;
 		    		case SORTIE_2 : sRet+= " "; break;
 		    	}
