@@ -121,16 +121,11 @@ public class FourmiliereV3
 	
 	private static boolean sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY)
         {
-           return (tab[fourmiPosY][fourmiPosX]==SORTIE_1 || tab[fourmiPosY][fourmiPosX]==SORTIE_2);
-
+           return (tab[fourmiPosY][fourmiPosX]==SORTIE_1 || 
+		   tab[fourmiPosY][fourmiPosX]==SORTIE_2);
         }
 	
-	private static boolean sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY)
-        {
-           return (tab[fourmiPosY][fourmiPosX]==SORTIE_1 || tab[fourmiPosY][fourmiPosX]==SORTIE_2);
 
-        }
-	
 	private static int[][] deplaceFourmi(terrain , colF, ligF, pos)
 	{
 		int[][] new tab = terrain;
