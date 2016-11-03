@@ -118,7 +118,7 @@ public class FourmiliereV3
                     {
                         switch(tab[i][j])
                         {
-                            case 0 	      : sRet+= " "; break;
+                            case 0        : sRet+= " "; break;
                             case MUR      : sRet+= "X"; break;
                             case ENTREE   : sRet+= " "; break;
                             case SORTIE_1 : sRet+= " "; break;
@@ -154,6 +154,7 @@ public class FourmiliereV3
 		{
 			System.out.println("Direction ? N S E O . . . ");
 			chaine = scan.nextLine();
+			//Il ne faut pas essayer un chaine.charAt(0) sur une chaine NULL
 			if(chaine.length()!=0) car = chaine.charAt(0);
 			
 			//Nombre impair pour les abscisses et pair pour les ordonnees
@@ -182,6 +183,8 @@ public class FourmiliereV3
 					if(colF-2>=0)
 						if(tab[ligF][colF-1]!=MUR) return -2;
 					break;
+					
+				///Un default n'est pas utile ici, les cas par défauts sont gérés en sortie de boucle
 			}
 			
 			// Quand on arrive ici, la direction est invalide
