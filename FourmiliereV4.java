@@ -22,9 +22,9 @@ public class FourmiliereV4 {
         terrain = FourmiliereV4.initTerrain();
 
         // Recherche de la colonne de l'entree du parcours, l'entree sera toujours sur la ligne 0
-        for (int i = 0; i < DIM; i++) 
+        for (int i = 0; i < DIM; i++)
             if (terrain[0][i] == ENTREE) colF = i;
-        
+
 
         do {
             // Affichage du Terrain
@@ -36,11 +36,11 @@ public class FourmiliereV4 {
 
             // Negatif : decrementation
             // Positif : incrementation
-            if(mouvement%2!=0)// Nombre impair : ordonnee
-            	ligF = (mouvement < 0) ? ligF-1 : ligF+1;
-		
-            else// Nombre pair : abscisse
-            	colF = (mouvement < 0) ? colF-1 : colF+1;
+            if (mouvement % 2 != 0) // Nombre impair : ordonnee
+                ligF = (mouvement < 0) ? ligF - 1 : ligF + 1;
+
+            else // Nombre pair : abscisse
+                colF = (mouvement < 0) ? colF - 1 : colF + 1;
 
         } while (!sortieTrouvee(terrain, colF, ligF));
 
@@ -125,7 +125,7 @@ public class FourmiliereV4 {
 
     private static boolean sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY) {
         return (tab[fourmiPosY][fourmiPosX] == SORTIE_1 ||
-                tab[fourmiPosY][fourmiPosX] == SORTIE_2);
+            tab[fourmiPosY][fourmiPosX] == SORTIE_2);
     }
 
 
@@ -137,8 +137,8 @@ public class FourmiliereV4 {
 
             nb = (int)((Math.random() * 4));
 
-			//Nombre impair pour les ordonnees et pair pour les abscisses
-			//Nombre positif pour une incrementation et negatif pour une decrementation
+            //Nombre impair pour les ordonnees et pair pour les abscisses
+            //Nombre positif pour une incrementation et negatif pour une decrementation
 
             switch (nb) {
                 case 0:
@@ -157,7 +157,7 @@ public class FourmiliereV4 {
                     if (colF - 1 >= 0)
                         if (tab[ligF][colF - 1] != MUR) return -2;
                     break;
-                ///Un default n'est pas utile ici
+                    ///Un default n'est pas utile ici
             }
 
         } while (true);
