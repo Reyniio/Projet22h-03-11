@@ -14,6 +14,7 @@ public class FourmiliereV2 {
         /*------------------*/
         int[][] terrain;
         int ligF = 0, colF = 0;
+		
         /*------------------*/
         /*  INSTRUCTIONS    */
         /*------------------*/
@@ -25,9 +26,9 @@ public class FourmiliereV2 {
         for (int i = 0; i < DIM; i++) {
             if (terrain[0][i] == ENTREE) colF = i;
         }
+		
         // Affichage du Terrain
         System.out.println(FourmiliereV2.enChaine(terrain, colF, ligF));
-
     }
 
     private static int[][] initTerrain() {
@@ -61,7 +62,7 @@ public class FourmiliereV2 {
                 tab[i][DIM - 1 - j] = bloc[i][j];
             }
         }
-
+		
         return tab;
     }
 
@@ -92,13 +93,10 @@ public class FourmiliereV2 {
                             break;
                     }
                 }
-
             }
             sRet += "\n";
         }
-
-
+		
         return sRet;
-
     }
 }

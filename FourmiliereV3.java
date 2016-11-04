@@ -15,6 +15,7 @@ public class FourmiliereV3 {
         /*------------------*/
         int[][] terrain;
         int ligF = 0, colF = 0, mouvement;
+		
         /*------------------*/
         /*  INSTRUCTIONS    */
         /*------------------*/
@@ -25,7 +26,6 @@ public class FourmiliereV3 {
         // Recherche de la colonne de l'entree du parcours, l'entree sera toujours sur la ligne 0
         for (int i = 0; i < DIM; i++)
             if (terrain[0][i] == ENTREE) colF = i;
-
 
         do {
             // Affichage du Terrain
@@ -79,7 +79,6 @@ public class FourmiliereV3 {
         for (int i = 0; i < DIM; i++)
             for (int j = DIM / 2; j >= 0; j--)
                 tab[i][DIM - 1 - j] = bloc[i][j];
-
         return tab;
     }
 
@@ -114,7 +113,6 @@ public class FourmiliereV3 {
             }
             sRet += "\n";
         }
-
 
         return sRet;
 
@@ -167,11 +165,9 @@ public class FourmiliereV3 {
 
                     ///Un default n'est pas utile ici, les cas par defauts sont geres en sortie de boucle
             }
-
             // Quand on arrive ici, la direction est invalide
             System.out.println("Direction invalide");
-
-
+			
         } while (true);
 
     }

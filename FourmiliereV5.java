@@ -30,7 +30,6 @@ public class FourmiliereV5 {
         for (int i = 0; i < DIM; i++)
             if (terrain[0][i] == ENTREE) colF = i;
 
-
         do {
             // Affichage du Terrain
             System.out.println(FourmiliereV5.enChaine(terrain, colF, ligF));
@@ -38,7 +37,6 @@ public class FourmiliereV5 {
             // Deplacement de la fourmi par le joueur
             mouvement = aMainDroite(terrain, colF, ligF);
             nbTentative++;
-
 
             // Negatif : decrementation
             // Positif : incrementation
@@ -53,7 +51,6 @@ public class FourmiliereV5 {
             // Negatif pair   : orientation ouest
             // Positif pair   : orientation est
             orientation = mouvement % 2 != 0 ? mouvement < 0 ? 'N' : 'S' : mouvement < 0 ? 'O' : 'E';
-
 
         } while (!sortieTrouvee(terrain, colF, ligF));
 
@@ -131,16 +128,13 @@ public class FourmiliereV5 {
             sRet += "\n";
         }
 
-
         return sRet;
-
     }
 
     private static boolean sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY) {
         return (tab[fourmiPosY][fourmiPosX] == SORTIE_1 ||
             tab[fourmiPosY][fourmiPosX] == SORTIE_2);
     }
-
 
     private static int aMainDroite(int[][] tab, int colF, int ligF) {
         switch (orientation) {
@@ -224,7 +218,6 @@ public class FourmiliereV5 {
                         return +2;
                 break;
         }
-
 
         /// Le programme ne retournera jamais 0 car au moins une des 4 directions est valide
         return 0;

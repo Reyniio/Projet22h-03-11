@@ -14,6 +14,7 @@ public class FourmiliereV4 {
         /*------------------*/
         int[][] terrain;
         int ligF = 0, colF = 0, mouvement, nbTentative = 0;
+		
         /*------------------*/
         /*  INSTRUCTIONS    */
         /*------------------*/
@@ -41,7 +42,7 @@ public class FourmiliereV4 {
 
             else // Nombre pair : abscisse
                 colF = (mouvement < 0) ? colF - 1 : colF + 1;
-
+				
         } while (!sortieTrouvee(terrain, colF, ligF));
 
         // Affichage du Terrain avec la fourmi sur une des sorties
@@ -118,9 +119,7 @@ public class FourmiliereV4 {
             sRet += "\n";
         }
 
-
         return sRet;
-
     }
 
     private static boolean sortieTrouvee(int[][] tab, int fourmiPosX, int fourmiPosY) {
